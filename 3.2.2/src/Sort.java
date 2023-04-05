@@ -5,7 +5,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
-public class Main {
+public class Sort {
     public static int ans=0;
     public static void main(String[] args) throws Exception {
         String s0="./input",s1="./output";
@@ -17,8 +17,8 @@ public class Main {
         }
         Job job=Job.getInstance(conf,"Main");
         job.setJarByClass(Main.class);
-        job.setMapperClass(mapper.class);
-        job.setReducerClass(reducer.class);
+        job.setMapperClass(mapperSort.class);
+        job.setReducerClass(reducerSort.class);
         //job.setNumReduceTasks(2);
         FileInputFormat.setInputPaths(job, new Path(s0));
         FileOutputFormat.setOutputPath(job,new Path(s1));
