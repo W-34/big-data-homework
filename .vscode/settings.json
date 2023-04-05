@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\.vscode\\java2023\\hadoop-mapreduce-client-core-2.6.5.jar",
+        "d:\\.vscode\\java2023\\hadoop-common-2.6.5.jar",
+        "d:\\.vscode\\java2023\\hadoop-hdfs-2.6.5.jar"
+    ]
+}
