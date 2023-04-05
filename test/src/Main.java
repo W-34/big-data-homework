@@ -6,6 +6,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 public class Main {
+    public static int ans=0;
     public static void main(String[] args) throws Exception {
         String s0="./input",s1="./output";
         Path path=new Path(s1);
@@ -18,7 +19,7 @@ public class Main {
         job.setJarByClass(Main.class);
         job.setMapperClass(mapper.class);
         job.setReducerClass(reducer.class);
-        job.setNumReduceTasks(2);
+        //job.setNumReduceTasks(2);
         FileInputFormat.setInputPaths(job, new Path(s0));
         FileOutputFormat.setOutputPath(job,new Path(s1));
         // job.setMapOutputKeyClass(Text.class);
@@ -27,5 +28,6 @@ public class Main {
         job.setOutputValueClass(Text.class);
         boolean res=job.waitForCompletion(true);
         System.out.println(res);
+        System.out.println("total: "+ans);
     }
 }
