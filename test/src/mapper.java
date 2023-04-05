@@ -2,7 +2,6 @@ import java.io.IOException;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
-import org.apache.hadoop.mapreduce.Reducer;
 public class mapper extends Mapper<Object,Text,Text,Text>{
     private static Text text=new Text();
     public void map(Object key,Text value,Context context)throws IOException,InterruptedException{
